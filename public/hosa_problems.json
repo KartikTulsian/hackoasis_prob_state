@@ -1,0 +1,311 @@
+[
+  {
+    "id": "HOSA01",
+    "title": "Automated School Restructuring with Generative AI",
+    "challenge": "Discrepancies in school data, often due to non-standard (\"odd\") school structures, create a ripple effect of inefficient resource allocation and flawed policy implementation. The core issue is the manual, error-prone process of identifying these anomalies and, more importantly, developing effective plans to fix them.",
+    "yourMission": "Build a web-based AI system that analyzes simulated school data to identify non-standard structures and generates an optimized restructuring plan.",
+    "yourSolution": [
+      "Generative Restructuring Engine: Implement a generative AI model that takes simulated school data as input and creates a detailed, narrative-based restructuring plan. The plan should include a new grade configuration, resource allocation recommendations, and a proposed timeline for implementation. This moves beyond simple flagging to provide a proactive solution.",
+      "Data Anomaly Detection: Use a simple machine learning model (e.g., a rule-based system or a clustering algorithm) to automatically flag simulated school data that doesn't conform to standard educational policies.",
+      "Policy Compliance Dashboard: Create a web-based dashboard that visualizes the detected anomalies on a map or in a list, showing which schools do not conform to standard educational policies."
+    ],
+    "bonus": [
+      "Integrate a feature that simulates the resource allocation impact of these anomalies, demonstrating the financial and material inefficiencies.",
+      "Allow users to 'correct' a school's data and show how the anomaly status is updated in real-time."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 4: Quality Education: By improving policy implementation and resource allocation, this system directly contributes to better quality education for students in non-standard schools.",
+      "SDG 10: Reduced Inequalities: The project helps ensure equitable resource distribution, addressing disparities caused by non-uniform school structures."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA02",
+    "title": "AI-Powered Fraud Detection in Digital Credentials",
+    "challenge": "The approval and verification process for educational institutions is a time-consuming, manual bottleneck. A crucial step—document verification—is prone to human error and fraud. The problem is not just automating the process, but developing a system that can intelligently detect forged or manipulated documents.",
+    "yourMission": "Design an AI-powered portal that automates the verification of a single, crucial document (e.g., a a certificate) to streamline a simulated approval process.",
+    "yourSolution": [
+      "AI-Driven Document Analysis: Implement a pre-trained computer vision model to automatically analyze a simulated document image. The model should be trained to perform a specific verification task, such as confirming the presence of a signature or checking if a floor plan includes a required fire exit.",
+      "Workflow Automation: The system should automatically move the application to the 'verified' or 'rejected' stage based on the AI's analysis.",
+      "Real-time Status Dashboard: Provide a simple dashboard that shows the application's status in real-time, displaying whether the document has been successfully verified or flagged for manual review."
+    ],
+    "bonus": [
+      "Add a feature that tracks the number of documents processed and the time saved by the automated system.",
+      "Use a simple rule-based system to flag a document as 'suspicious' if it lacks a key visual element, simulating fraud detection."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 4: Quality Education: By streamlining the approval process, the system helps ensure that more compliant and legitimate educational institutions can be accredited more efficiently",
+      "SDG 16: Peace, Justice, and Strong Institutions: The project enhances institutional transparency and efficiency by reducing fraud and administrative delays in a regulatory process"
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA03",
+    "title": "AI-Powered Anomaly Detection for Doping Investigations",
+    "challenge": "Catching doping violations requires sifting through vast amounts of data to find hidden patterns. The problem isn't a lack of data, but a lack of a system that can intelligently connect seemingly unrelated data points to flag suspicious behavior.",
+    "yourMission": "Build a simplified, AI-powered system that analyzes simulated athlete data from multiple sources to detect and flag suspicious anomalies.",
+    "yourSolution": [
+      "Data Integration Engine: Create a script that generates and fuses two distinct streams of simulated data for a single athlete: one stream representing biological data (e.g., changes in red blood cell count) and another stream representing external data (e.g., unusual travel locations or social media activity).",
+      "Anomaly Detection Model: Implement a simple machine learning model (e.g., a time-series model or a clustering algorithm) that can detect an \"anomaly\" when a specific combination of data points occurs (e.g., a sudden change in blood data coinciding with a trip to a high-risk location).",
+      "Investigator Dashboard: Provide a simple dashboard that visualizes the detected anomaly and its contributing factors, allowing an investigator to quickly understand the case and prioritize it."
+    ],
+    "bonus": [
+      "Add a feature that allows an investigator to add a note to the case, demonstrating how a human can collaborate with the AI.",
+      "Implement a simple alert system that sends a \"suspicious activity\" notification when an anomaly is detected."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 3: Good Health and Well-being: By enhancing anti-doping efforts, the system contributes to fair and healthy competition, promoting the well-being of athletes and the integrity of sports.",
+      "SDG 16: Peace, Justice, and Strong Institutions: The project strengthens anti-doping agencies by providing a tool that enhances investigative capabilities and promotes justice in sports."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA04",
+    "title": "Automated R&D Project Monitoring and Reporting",
+    "challenge": "The manual monitoring of research projects, with its heavy reliance on physical documents and manual data entry, is inefficient and leads to data inconsistencies. The core problem is the lack of a centralized, automated system for tracking physical and financial progress.",
+    "yourMission": "Develop an automated web application that streamlines the submission and monitoring of a single research project's progress.",
+    "yourSolution": [
+      "Automated Data Capture: Create a web form that allows a researcher to input progress data (e.g., \"10% physical progress complete,\" \"5% of funds utilized\"). The system should automatically update a central database with this information.",
+      "Automated Document Processing: Use a simple script or a third-party service to process a single, submitted document (e.g., a progress report in PDF format). The system should automatically extract key data points from the document and match them against the manually entered data.",
+      "Real-time Reporting Dashboard: Provide an \"admin console\" that displays a real-time progress report for the project, showing both the physical and financial progress. The dashboard should automatically flag discrepancies between the submitted data and the processed document."
+    ],
+    "bonus": [
+      "Implement an automated email alert that is sent to a project investigator if a submission deadline is missed.",
+      "Add a simple \"audit trail\" that logs every data submission and modification."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 9: Industry, Innovation, and Infrastructure: The project directly contributes to more efficient management of research and development, fostering innovation and sustainable infrastructure.",
+      "SDG 12: Responsible Consumption and Production: By providing better oversight of R&D funding, the system helps ensure that resources are used responsibly and without waste."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA05",
+    "title": "Integrated Fish Catch Data Repository",
+    "challenge": "Scientific data on fish catch is scattered and disorganized, wasting valuable time and hindering critical research. A unified, searchable database is needed to enable the development of more accurate species-specific advisories.",
+    "yourMission": "Build a user-friendly, web-based data repository that can ingest simulated disaggregated data and provide scientists with a streamlined way to filter, visualize, and download it.",
+    "yourSolution": [
+      "Data Ingestion Portal: Create a simple web page or API endpoint that can accept simulated fish catch data in Excel/CSV format. The system should automatically parse the data and categorize it by species, location, and date.",
+      "Advanced Filtering and Search: Implement a robust search and filtering system on the front-end that allows a user to query the data based on multiple parameters, such as a specific species, a geographical area (using latitude/longitude ranges), or a time period.",
+      "Data Visualization and Download: The system must visualize the search results using simple charts (e.g., a bar chart showing abundance) and a map. It should also allow the user to download the filtered data in a clean, standardized format."
+    ],
+    "bonus": [
+      "Implement a login system to control data access and provide an admin page for uploading new data.",
+      "Create a simple map that shows \"heatmaps\" of a species' abundance in a given area."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 14: Life Below Water: By making fish catch data more accessible, the project enables better scientific research for sustainable fisheries management and ocean conservation.",
+      "SDG 9: Industry, Innovation, and Infrastructure: The system represents a crucial piece of digital infrastructure for scientific research, fostering innovation and data-driven policy in marine biology."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA06",
+    "title": "AI-Driven Restructuring for Equitable Education",
+    "challenge": "Educational policy implementation is stymied by \"odd\" school structures, which are difficult to identify and manage. The manual process for restructuring schools is slow and fails to account for the unique needs of each community, leading to inequitable resource distribution. A smarter, more empathetic system is needed.",
+    "yourMission": "Build a web-based AI system that analyzes simulated school data to identify non-standard structures and generates an optimized restructuring plan that minimizes disruption to students and staff.",
+    "yourSolution": [
+      "Generative Restructuring Engine: Implement a generative AI model that takes simulated school data as input and creates a detailed, narrative-based restructuring plan. The plan should include a new grade configuration, resource allocation recommendations, and a proposed timeline for implementation.",
+      "Data Anomaly Detection: Use a simple machine learning model (e.g., a rule-based system or a clustering algorithm) to automatically flag simulated school data that doesn't conform to standard educational policies.",
+      "Policy Compliance Dashboard: Create a web-based dashboard that visualizes the detected anomalies on a map or in a list, showing which schools do not conform to standard educational policies."
+    ],
+    "bonus": [
+      "Integrate a feature that simulates the resource allocation impact of these anomalies, demonstrating the financial and material inefficiencies.",
+      "Allow users to \"correct\" a school's data and show how the anomaly status is updated in real-time."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 4: Quality Education - By improving policy implementation and resource allocation, this system directly contributes to better quality education for students in non-standard schools.",
+      "SDG 10: Reduced Inequalities - The project helps ensure equitable resource distribution, addressing disparities caused by non-uniform school structures."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA07",
+    "title": "Automated Credential Verification for University Admissions",
+    "challenge": "The approval and verification process for educational institutions is a manual bottleneck, prone to error and fraud. A single, crucial step—document verification—is ripe for automation to reduce administrative overhead and fraud.",
+    "yourMission": "Design an AI-powered portal that automates the verification of a single, crucial document (e.g., a floor plan or a compliance certificate) to streamline a simulated approval process.",
+    "yourSolution": [
+      "AI-Driven Document Analysis: Implement a pre-trained computer vision model to automatically analyze a simulated document image. The model should be trained to perform a specific verification task, such as confirming the presence of a signature or checking if a floor plan includes a required fire exit.",
+      "Workflow Automation: The system should automatically move the application to the \"verified\" or \"rejected\" stage based on the AI's analysis.",
+      "Real-time Status Dashboard: Provide a simple dashboard that shows the application's status in real-time, displaying whether the document has been successfully verified or flagged for manual review."
+    ],
+    "bonus": [
+      "Add a feature that tracks the number of documents processed and the time saved by the automated system.",
+      "Use a simple rule-based system to flag a document as \"suspicious\" if it lacks a key visual element, simulating fraud detection."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 4: Quality Education - By streamlining the approval process, the system helps ensure that more compliant and legitimate educational institutions can be accredited more efficiently.",
+      "SDG 16: Peace, Justice, and Strong Institutions - The project enhances institutional transparency and efficiency by reducing fraud and administrative delays in a regulatory process."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA08",
+    "title": "Anomaly Detection for Doping Investigations",
+    "challenge": "Catching doping violations requires sifting through vast amounts of data to find hidden patterns. The problem isn't a lack of data, but a lack of a system that can intelligently connect seemingly unrelated data points to flag suspicious behavior.",
+    "yourMission": "Build a simplified, AI-powered system that analyzes simulated athlete data from multiple sources to detect and flag suspicious anomalies.",
+    "yourSolution": [
+      "Data Integration Engine: Create a script that generates and fuses two distinct streams of simulated data for a single athlete: one stream representing biological data (e.g., changes in red blood cell count) and another stream representing external data (e.g., unusual travel locations or social media activity).",
+      "Anomaly Detection Model: Implement a simple machine learning model (e.g., a time-series model or a clustering algorithm) that can detect an \"anomaly\" when a specific combination of data points occurs (e.g., a sudden change in blood data coinciding with a trip to a high-risk location).",
+      "Investigator Dashboard: Provide a simple dashboard that visualizes the detected anomaly and its contributing factors, allowing an investigator to quickly understand the case and prioritize it."
+    ],
+    "bonus": [
+      "Add a feature that allows an investigator to add a note to the case, demonstrating how a human can collaborate with the AI.",
+      "Implement a simple alert system that sends a \"suspicious activity\" notification when an anomaly is detected."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 3: Good Health and Well-being - By enhancing anti-doping efforts, the system contributes to fair and healthy competition, promoting the well-being of athletes and the integrity of sports.",
+      "SDG 16: Peace, Justice, and Strong Institutions - The project strengthens anti-doping agencies by providing a tool that enhances investigative capabilities and promotes justice in sports."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA09",
+    "title": "Automated R&D Project Monitoring and Reporting",
+    "challenge": "The manual monitoring of research projects, with its heavy reliance on physical documents and manual data entry, is inefficient and leads to data inconsistencies. The core problem is the lack of a centralized, automated system for tracking physical and financial progress.",
+    "yourMission": "Develop an automated web application that streamlines the submission and monitoring of a single research project's progress.",
+    "yourSolution": [
+      "Automated Data Capture: Create a web form that allows a researcher to input progress data (e.g., \"10% physical progress complete,\" \"5% of funds utilized\"). The system should automatically update a central database with this information.",
+      "Automated Document Processing: Use a simple script or a third-party service to process a single, submitted document (e.g., a progress report in PDF format). The system should automatically extract key data points from the document and match them against the manually entered data.",
+      "Real-time Reporting Dashboard: Provide an \"admin console\" that displays a real-time progress report for the project, showing both the physical and financial progress. The dashboard should automatically flag discrepancies between the submitted data and the processed document."
+    ],
+    "bonus": [
+      "Implement an automated email alert that is sent to a project investigator if a submission deadline is missed.",
+      "Add a simple \"audit trail\" that logs every data submission and modification."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 9: Industry, Innovation, and Infrastructure - The project directly contributes to more efficient management of research and development, fostering innovation and sustainable infrastructure.",
+      "SDG 12: Responsible Consumption and Production - By providing better oversight of R&D funding, the system helps ensure that resources are used responsibly and without waste."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA10",
+    "title": "Integrated Fish Catch Data Repository",
+    "challenge": "Scientific data on fish catch is scattered and disorganized, wasting valuable time and hindering critical research. A unified, searchable database is needed to enable the development of more accurate species-specific advisories.",
+    "yourMission": "Build a user-friendly, web-based data repository that can ingest simulated disaggregated data and provide scientists with a streamlined way to filter, visualize, and download it.",
+    "yourSolution": [
+      "Data Ingestion Portal: Create a simple web page or API endpoint that can accept simulated fish catch data in Excel/CSV format. The system should automatically parse the data and categorize it by species, location, and date.",
+      "Advanced Filtering and Search: Implement a robust search and filtering system on the front-end that allows a user to query the data based on multiple parameters, such as a specific species, a geographical area (using latitude/longitude ranges), or a time period.",
+      "Data Visualization and Download: The system must visualize the search results using simple charts (e.g., a bar chart showing abundance) and a map. It should also allow the user to download the filtered data in a clean, standardized format."
+    ],
+    "bonus": [
+      "Implement a login system to control data access and provide an admin page for uploading new data.",
+      "Create a simple map that shows \"heatmaps\" of a species' abundance in a given area."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 14: Life Below Water - By making fish catch data more accessible, the project enables better scientific research for sustainable fisheries management and ocean conservation.",
+      "SDG 9: Industry, Innovation, and Infrastructure - The system represents a crucial piece of digital infrastructure for scientific research, fostering innovation and data-driven policy in marine biology."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA11",
+    "title": "Secure AI Model Deployment for Biometric Liveness",
+    "challenge": "Deploying AI models for real-time applications on the web poses significant security risks. The models can be easily tampered with or reverse-engineered, compromising the integrity of sensitive processes like biometric liveness checks.",
+    "yourMission": "Develop a prototype for a secure, obfuscated ML model delivery system that protects a simplified AI model from tampering while keeping it small enough for a fast download.",
+    "yourSolution": [
+      "Model Obfuscation & Delivery: Use a backend component to take a small, pre-trained ML model and apply a simple obfuscation or encryption layer. The model's size must not increase significantly after the security frameworks are applied.",
+      "Client-Side Decryption: Create a front-end web application that can receive the obfuscated model, decrypt it in the browser, and then use it to run a simplified task (e.g., a \"liveness check\" that detects if a user's face is a static image).",
+      "Speed & Efficiency Dashboard: The solution must include a simple dashboard that shows the download time for both the original and obfuscated models, demonstrating the efficiency of your approach."
+    ],
+    "bonus": [
+      "Implement a simple mechanism to verify the integrity of the downloaded model before it's used.",
+      "Use a front-end framework to create a user-friendly interface for a \"face liveness\" test."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 9: Industry, Innovation, and Infrastructure - The project contributes to secure and robust digital infrastructure for critical online services.",
+      "SDG 16: Peace, Justice, and Strong Institutions - By securing sensitive data processes, the system enhances security and trust in digital public services."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA12",
+    "title": "AI-Powered Threat Analysis Sandbox",
+    "challenge": "Traditional antivirus systems are limited by their singular approach and often struggle to keep up with new threats. A more effective solution involves combining the strengths of multiple engines.",
+    "yourMission": "Build a prototype for an automated, parallel threat-scanning pipeline that can analyze a \"target\" folder of files for viruses and malware.",
+    "yourSolution": [
+      "Parallel Scanning Engine: Develop a script or a simple application that takes a folder of simulated files and \"scans\" them in parallel using at least three different mock antivirus engines (represented by simple functions or APIs that return a \"clean\" or \"infected\" status).",
+      "Automated File Segregation: The system must automatically move \"infected\" files into a designated \"quarantine\" folder and record the original file path in a separate log file. \"Clean\" files should remain in the original folder.",
+      "Unified Results Dashboard: The solution must feature a dashboard (like a simplified VirusTotal) that displays the scanning results from all mock antivirus engines side-by-side. The dashboard should clearly show which files were flagged and by which \"engine.\""
+    ],
+    "bonus": [
+      "Implement a simple AI model that uses the results from the different mock engines to provide a single, unified \"threat score\" for each file.",
+      "Add a feature that allows a user to \"release\" a quarantined file back to its original location."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 9: Industry, Innovation, and Infrastructure - The project contributes to a more secure and resilient digital infrastructure for critical information systems.",
+      "SDG 16: Peace, Justice, and Strong Institutions - By enhancing cybersecurity, the system helps protect critical data and promotes strong digital governance."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA13",
+    "title": "A Real-time Water Quality Forecasting and Alerting System",
+    "challenge": "Monitoring river water quality is a complex task that relies on disparate data sources. A lack of real-time, integrated, and accessible forecasts hinders proactive environmental management and public health initiatives.",
+    "yourMission": "Build a web-based, AI-enabled decision support system that fuses simulated data from multiple sources to provide real-time water quality forecasts and alerts for a simulated river system.",
+    "yourSolution": [
+      "Data Fusion Engine: Create a script that generates and fuses simulated data from at least three sources: \"IoT sensors\" (e.g., pH, dissolved oxygen), \"satellite data\" (e.g., a simple color-coded image of the river), and \"weather data\" (e.g., a stream of rainfall data).",
+      "Predictive AI Model: Implement a simple time-series model that takes the fused data and provides a short-term (e.g., 3-day) forecast for a key water quality metric, such as \"fecal coliform levels.\"",
+      "User-friendly Dashboard: Create a dashboard that visualizes the simulated river system on a map. The dashboard should display the real-time data and the AI's forecast in a clear, easy-to-understand format. It should also include a feature for setting up a custom alert when a metric exceeds a certain threshold."
+    ],
+    "bonus": [
+      "Display a time-series plot that shows the historical data and the forecast side-by-side.",
+      "Add a feature that simulates a public alert for an \"extreme pollution event\" based on the AI's forecast."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 6: Clean Water and Sanitation - The system directly contributes to better management of water resources and pollution control.",
+      "SDG 13: Climate Action - By helping to manage the impact of climate-related events like heavy rainfall on water quality, the project supports climate action."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOSA14",
+    "title": "AI-Powered Crop Disease Diagnostic Portal",
+    "challenge": "Farmers in remote areas lack access to timely disease diagnosis for their crops and livestock. This leads to reduced yields and widespread outbreaks.",
+    "yourMission": "Develop a mobile-first web portal that uses AI to provide farmers with an instant disease diagnosis and a recommended course of action based on an uploaded image.",
+    "yourSolution": [
+      "Mobile-First Diagnostic Portal: Create a web-based portal with a mobile-first design that allows a user to upload an image of a simulated plant or crop.",
+      "AI-Powered Disease Diagnosis: Implement a pre-trained computer vision model (e.g., from a library like TensorFlow.js) that can analyze the uploaded image and classify the disease. The model should be trained to identify at least three different diseases on a plant.",
+      "Actionable Recommendations: Based on the AI's diagnosis, the system should display a recommended course of action, such as a \"remedy\" or a \"prevention measure,\" in a simple, text-based format."
+    ],
+    "bonus": [
+      "Add a \"reporting\" feature that allows a user to submit the diagnosed disease, which updates a simple map showing the location of outbreaks.",
+      "Include a feature that allows a user to ask a question to a simple chatbot for more information about the disease."
+    ],
+    "domain": "Smart Automation",
+    "sdgs": [
+      "SDG 2: Zero Hunger - The project contributes to improved food security by helping farmers prevent crop loss due to disease.",
+      "SDG 1: No Poverty - By empowering farmers with tools for effective disease management, the system helps improve farm productivity and income."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  }
+]
+

@@ -1,0 +1,462 @@
+[
+  {
+    "id": "HOCC01",
+    "title": "Cloud-Based Disaster Recovery as a Service (DRaaS)",
+    "challenge": "Most small businesses can't afford robust disaster recovery, leaving them vulnerable to data loss and system downtime.",
+    "yourMission": "Develop an affordable, cloud-based platform that helps businesses quickly recover from outages and get back to work.",
+    "yourSolution": [
+      "Provide automated, scheduled backups and quick restoration of all business data.",
+      "Support multi-cloud redundancy for maximum resilience against regional failures.",
+      "Ensure minimal downtime with fast, one-click failover options.",
+      "Include predictive analytics that can forecast potential outages and suggest preventative actions."
+    ],
+    "bonus": [
+      "Offer tiered recovery plans so businesses can choose based on their specific needs and budget.",
+      "Integrate a live simulation mode to test recovery plans without disrupting operations."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 9 (Industry, Innovation & Infrastructure): This project strengthens digital infrastructure by making disaster recovery accessible to smaller businesses, encouraging innovation and resilience.",
+      "SDG 11 (Sustainable Cities & Communities): This project enhances community resilience by ensuring essential digital and business services remain functional during crises."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC02",
+    "title": "Cloud-Based Smart Classroom Platform",
+    "challenge": "Traditional classrooms aren't flexible enough for today's diverse learners, especially those in remote areas.",
+    "yourMission": "Build a cloud-enabled platform that makes learning flexible, inclusive, and more engaging for everyone.",
+    "yourSolution": [
+      "Provide real-time video streaming and collaborative tools that work seamlessly.",
+      "Offer secure cloud storage for all lecture notes, recordings, and assignments.",
+      "Support AI-driven student performance tracking to understand individual learning patterns.",
+      "Add multilingual translation and AR/VR modules for truly immersive and inclusive learning experiences."
+    ],
+    "bonus": [
+      "Develop a gamified learning environment with badges and leaderboards to boost student engagement.",
+      "Create a digital asset marketplace for teachers to share and monetize their content."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 4 (Quality Education): This project ensures equitable access to quality learning by using cloud-powered solutions to make education more engaging and inclusive.",
+      "SDG 10 (Reduced Inequalities): This project reduces barriers by offering digital education opportunities for learners in underserved regions or with accessibility needs."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC03",
+    "title": "Cloud-Native Healthcare Data Exchange",
+    "challenge": "Patient data is often stuck in separate systems, leading to treatment delays and poor outcomes.",
+    "yourMission": "Develop a secure, cloud-native platform that lets healthcare providers share patient data safely and efficiently.",
+    "yourSolution": [
+      "Provide APIs for seamless interoperability between hospital systems and labs.",
+      "Use military-grade encryption for all patient data, both in transit and at rest.",
+      "Offer role-based access that gives doctors, patients, and insurers clear permissions.",
+      "Integrate blockchain for data provenance and a clear, tamper-proof audit trail."
+    ],
+    "bonus": [
+      "Add AI for patient risk analysis and to predict potential health issues.",
+      "Provide a mobile-first patient portal for easy access to personal health records."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 3 (Good Health & Well-being): This project improves healthcare delivery by enabling real-time, secure, and accurate patient data sharing across providers.",
+      "SDG 16 (Peace, Justice & Strong Institutions): This project promotes accountability and trust in healthcare institutions through secure handling and transparent access of medical data."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC04",
+    "title": "Cloud-Powered Traffic Management System",
+    "challenge": "Traffic congestion in cities wastes time and fuel, and it creates a lot of pollution.",
+    "yourMission": "Build a cloud-powered system that uses data to optimize traffic flow, making urban travel smoother and safer.",
+    "yourSolution": [
+      "Collect real-time traffic data from a variety of sources, including IoT sensors and mobile devices.",
+      "Use cloud analytics and machine learning to dynamically optimize traffic signal timings.",
+      "Provide live traffic updates to citizens via a user-friendly mobile application.",
+      "Add AI-based accident prediction and intelligent rerouting capabilities."
+    ],
+    "bonus": [
+      "Integrate with public transportation data to provide a holistic view of urban mobility.",
+      "Develop a predictive model for major traffic events like rush hour or holidays."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 11 (Sustainable Cities & Communities): This project improves urban living by reducing congestion, enabling efficient mobility, and making cities more livable.",
+      "SDG 13 (Climate Action): This project actively contributes to emission reduction by lowering fuel wastage and promoting greener urban transport."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC05",
+    "title": "Cloud-Based Agricultural Advisory Platform",
+    "challenge": "Farmers often make decisions without good data, leading to wasted resources and lower yields.",
+    "yourMission": "Develop a cloud-enabled system that gives farmers timely, data-driven advice to help them make smarter decisions.",
+    "yourSolution": [
+      "Aggregate real-time weather, soil, and crop data in a central cloud platform.",
+      "Provide AI-based recommendations on optimal irrigation, fertilizers, and pest control.",
+      "Support mobile access with regional language options to reach rural communities.",
+      "Add image recognition for instant crop disease detection and diagnosis."
+    ],
+    "bonus": [
+      "Provide market price forecasts to help farmers plan when to sell their produce.",
+      "Integrate with IoT sensors to monitor soil moisture and nutrient levels."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 2 (Zero Hunger): This project contributes to global food security by helping farmers increase crop yield and reduce wastage.",
+      "SDG 12 (Responsible Consumption & Production): This project promotes sustainable farming practices, ensuring efficient resource usage and environmentally friendly agriculture."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC06",
+    "title": "Cloud-Native E-Voting Platform",
+    "challenge": "Many citizens can't vote because of physical barriers or outdated systems, and public trust in elections is often low.",
+    "yourMission": "Build a secure, cloud-native voting platform that makes it easy for everyone to vote while ensuring trust and transparency.",
+    "yourSolution": [
+      "Provide encrypted and anonymous vote submissions to protect voter privacy.",
+      "Offer multi-device compatibility, so citizens can vote from a computer, tablet, or phone.",
+      "Ensure real-time verification and a transparent, auditable vote count.",
+      "Add biometric authentication for secure voter identity verification."
+    ],
+    "bonus": [
+      "Provide offline-to-online sync for voters in rural regions with limited connectivity.",
+      "Integrate blockchain to create a tamper-proof and verifiable election record."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 16 (Peace, Justice & Strong Institutions): This project strengthens democracy by enabling transparent, verifiable, and secure digital voting processes.",
+      "SDG 10 (Reduced Inequalities): This project ensures equal participation by making voting accessible to all citizens, including those in remote or underserved areas."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC07",
+    "title": "Cloud-Based Smart Waste Management System",
+    "challenge": "Cities struggle with inefficient waste collection, leading to overflowing bins and health hazards.",
+    "yourMission": "Develop a cloud-powered system that helps city authorities manage waste more efficiently, leading to cleaner communities and lower costs.",
+    "yourSolution": [
+      "Collect IoT sensor data from smart waste bins to know when they're full.",
+      "Use cloud analytics to automatically optimize collection routes and schedules.",
+      "Provide real-time dashboards for municipal authorities to monitor operations.",
+      "Create a citizen mobile app that lets people report uncollected waste or overflowing bins."
+    ],
+    "bonus": [
+      "Integrate with recycling and reward programs to encourage citizen participation.",
+      "Use predictive AI to forecast waste generation patterns in different city areas."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 11 (Sustainable Cities & Communities): This project supports smart urban infrastructure by ensuring efficient and timely waste management for healthier communities.",
+      "SDG 12 (Responsible Consumption & Production): This project encourages recycling and sustainable practices by promoting efficient use of resources and reducing waste."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC08",
+    "title": "Cloud-Powered Disaster Early Warning System",
+    "challenge": "Late or inaccurate disaster warnings lead to devastating losses during floods, storms, or earthquakes.",
+    "yourMission": "Create a cloud-based system that uses big data and AI to provide timely and accurate alerts, helping communities stay safe.",
+    "yourSolution": [
+      "Aggregate real-time data from weather sensors, satellites, and seismographs.",
+      "Use cloud-based AI models for quick and accurate disaster prediction.",
+      "Send real-time alerts via multiple channels like SMS, mobile apps, and sirens.",
+      "Add multilingual alert systems and automated evacuation planning tools."
+    ],
+    "bonus": [
+      "Develop a public-facing dashboard that visualizes risk zones and real-time conditions.",
+      "Use historical data to model and simulate disaster impact on different communities."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 11 (Sustainable Cities & Communities): This project improves disaster readiness by enabling citizens and authorities to take early preventive actions.",
+      "SDG 13 (Climate Action): This project strengthens climate resilience by leveraging predictive technology to safeguard lives and infrastructure."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC09",
+    "title": "Cloud-Based Personalized Learning System",
+    "challenge": "Standardized lessons often disengage students because they don't adapt to different learning styles.",
+    "yourMission": "Develop a cloud-powered platform that dynamically adjusts to each student's needs and improves learning outcomes.",
+    "yourSolution": [
+      "Track student performance data and engagement in real-time.",
+      "Use AI to adapt course content and quizzes dynamically based on a student's progress.",
+      "Provide detailed progress reports for both students and teachers.",
+      "Add gamification features and support for differently-abled learners."
+    ],
+    "bonus": [
+      "Develop a \"Learning Twin\" AI model that mimics a student's learning style to predict future performance.",
+      "Enable voice-based navigation for accessibility and ease of use."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 4 (Quality Education): This project ensures personalized and inclusive education, enabling students to learn at their own pace and style.",
+      "SDG 10 (Reduced Inequalities): This project bridges learning gaps by providing equal opportunities for underserved and differently-abled learners."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC10",
+    "title": "Cloud-Based Cybersecurity Threat Intelligence Sharing",
+    "challenge": "Organizations are often attacked in isolation, making them more vulnerable to new threats.",
+    "yourMission": "Build a secure, cloud-native platform that lets organizations collaborate and share cybersecurity threat intelligence in real time.",
+    "yourSolution": [
+      "Aggregate threat reports from multiple organizations and sources.",
+      "Use AI to detect and categorize new and emerging threats.",
+      "Provide real-time alerts and recommended defense strategies.",
+      "Add blockchain for data authenticity and a secure record of all shared intelligence."
+    ],
+    "bonus": [
+      "Provide industry-specific threat dashboards with tailored insights.",
+      "Create a token-based reward system for organizations that contribute valuable data."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 9 (Industry, Innovation & Infrastructure): This project builds resilient digital infrastructure by enabling proactive cyber defense and reducing vulnerabilities.",
+      "SDG 16 (Peace, Justice & Strong Institutions): This project promotes safer and more transparent digital ecosystems by encouraging secure collaboration against cybercrime."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC11",
+    "title": "Cloud-Based Healthcare Teleconsultation Hub",
+    "challenge": "Many people in rural or underserved areas can't get quality medical care because of a lack of doctors and long travel distances.",
+    "yourMission": "Build a cloud-powered platform that connects patients to certified doctors instantly, no matter where they are.",
+    "yourSolution": [
+      "Provide secure video consultations hosted on the cloud with end-to-end encryption.",
+      "Store medical records safely with patient-controlled access and privacy settings.",
+      "Enable low-bandwidth compatibility to ensure reliable connections in rural areas.",
+      "Use AI-driven symptom checkers before consultations to help patients get a preliminary understanding of their condition."
+    ],
+    "bonus": [
+      "Integrate with local pharmacies to send digital prescriptions directly to a patient's phone.",
+      "Add a biometric authentication layer for secure patient and doctor sign-in."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 3 (Good Health & Well-being): This project ensures equitable healthcare access by providing digital consultations to underserved communities.",
+      "SDG 10 (Reduced Inequalities): This project reduces the healthcare divide by extending specialized medical support to rural and marginalized groups."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC12",
+    "title": "Cloud-Based Green Energy Monitoring Platform",
+    "challenge": "Despite using renewable energy, many people and businesses still waste it because they can't accurately track their usage in real-time.",
+    "yourMission": "Develop a cloud-enabled platform that helps users monitor, analyze, and optimize their clean energy consumption.",
+    "yourSolution": [
+      "Collect energy data from smart meters, solar panels, and wind turbines.",
+      "Provide real-time usage dashboards with AI insights on consumption patterns.",
+      "Recommend efficiency improvements for users, like when to run appliances to save energy.",
+      "Add gamification to reward energy-saving behaviors and encourage sustainable habits."
+    ],
+    "bonus": [
+      "Support community-based peer energy trading, allowing neighbors to buy and sell surplus energy.",
+      "Use predictive analytics to forecast energy availability based on weather data."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 7 (Affordable & Clean Energy): This project promotes clean energy adoption by making renewable energy use transparent and manageable.",
+      "SDG 13 (Climate Action): This project contributes to climate goals by optimizing energy efficiency and lowering carbon emissions."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC13",
+    "title": "Cloud-Powered Smart Farming Marketplace",
+    "challenge": "Farmers often don't make enough profit because they have to rely on middlemen. They also lack a way to connect directly with buyers and see real-time prices.",
+    "yourMission": "Build a cloud-based marketplace that connects farmers directly with consumers and businesses to help them earn more and reduce waste.",
+    "yourSolution": [
+      "Allow farmers to list their produce with real-time availability and pricing.",
+      "Provide buyer-seller communication tools for direct negotiation.",
+      "Support secure digital payments via the cloud to eliminate cash transactions.",
+      "Add AI-based price prediction to ensure fair valuation of produce."
+    ],
+    "bonus": [
+      "Integrate with logistics services for delivery support.",
+      "Include blockchain integration to provide a clear and transparent record of a product's origin."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 2 (Zero Hunger): This project ensures fair farmer income and supports stronger food systems through transparent trade.",
+      "SDG 8 (Decent Work & Economic Growth): This project boosts rural economies by empowering farmers with modern digital marketplaces."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC14",
+    "title": "Cloud-Powered Smart Water Management System",
+    "challenge": "Water is a precious resource, but a lot of it is wasted due to undetected leaks and unmonitored usage.",
+    "yourMission": "Develop a cloud-powered system that uses smart sensors and data to help households and cities conserve water and detect leaks in real-time.",
+    "yourSolution": [
+      "Collect IoT sensor data from pipelines, reservoirs, and smart meters.",
+      "Use cloud analytics to detect leaks and overuse patterns instantly.",
+      "Provide usage dashboards for households and municipalities to track consumption.",
+      "Add AI-based predictions for drought and water stress."
+    ],
+    "bonus": [
+      "Enable citizen alerts and community-wide water-saving challenges.",
+      "Integrate with smart valves that can automatically shut off in case of a major leak."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 6 (Clean Water & Sanitation): This project ensures sustainable water access by reducing wastage and improving monitoring.",
+      "SDG 11 (Sustainable Cities & Communities): This project builds urban resilience by enabling smart and efficient water management."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC15",
+    "title": "Cloud-Based Remote Work Collaboration Suite",
+    "challenge": "Remote teams often struggle to work together efficiently because they have to use many different apps for communication and file sharing.",
+    "yourMission": "Build a single, cloud-native platform that unifies all the tools a remote team needs to work together securely and productively.",
+    "yourSolution": [
+      "Provide real-time document editing and collaborative project tracking.",
+      "Enable secure cloud storage for all team files.",
+      "Offer integrated video conferencing and messaging in one place.",
+      "Add AI-based task prioritization and smart meeting summaries."
+    ],
+    "bonus": [
+      "Support multi-language and accessibility options for global teams.",
+      "Implement end-to-end encryption for all communications and files."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 8 (Decent Work & Economic Growth): This project enhances workforce productivity and flexibility for modern enterprises.",
+      "SDG 9 (Industry, Innovation & Infrastructure): This project strengthens digital infrastructure by offering a scalable collaboration platform for remote work."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC16",
+    "title": "Cloud-Based Personal Health & Fitness Assistant",
+    "challenge": "People have a lot of health data from their smartwatches and apps, but they don't have a good way to bring it all together to get personalized advice.",
+    "yourMission": "Develop a cloud-powered assistant that combines data from all a person's devices to provide tailored health and fitness recommendations.",
+    "yourSolution": [
+      "Aggregate wearable device data and app information in the cloud.",
+      "Provide AI-driven fitness and diet recommendations tailored to individual goals.",
+      "Allow users to share their progress securely with trainers or doctors.",
+      "Add social features for peer motivation and challenges."
+    ],
+    "bonus": [
+      "Integrate AR-guided workouts that users can follow at home.",
+      "Use predictive analytics to anticipate health risks based on a user's habits."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 3 (Good Health & Well-being): This project promotes healthier lifestyles by using technology to deliver personalized and consistent health guidance.",
+      "SDG 9 (Industry, Innovation & Infrastructure): This project fosters innovation in digital fitness by merging AI, wearables, and cloud technology for better health outcomes."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC17",
+    "title": "Cloud-Based Open Data Platform for Research",
+    "challenge": "Researchers around the world struggle to find and share data, which slows down innovation and discovery.",
+    "yourMission": "Create a cloud-enabled hub that makes it easy for researchers to share, analyze, and collaborate on open datasets.",
+    "yourSolution": [
+      "Host datasets securely on the cloud with easy access and download options.",
+      "Provide collaborative analysis tools and version control for different data iterations.",
+      "Support citation and version tracking of datasets to ensure proper attribution.",
+      "Add AI recommendations for related datasets and research papers."
+    ],
+    "bonus": [
+      "Provide blockchain-backed verification for data authenticity.",
+      "Implement a federated learning framework so researchers can train models on data without needing to move it."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 4 (Quality Education): This project enhances global learning and innovation by making research resources more accessible and collaborative.",
+      "SDG 9 (Industry, Innovation & Infrastructure): This project promotes open innovation by creating resilient cloud infrastructure for data-driven research."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC18",
+    "title": "Cloud-Powered Citizen Grievance Redressal Platform",
+    "challenge": "Citizens often have a hard time filing complaints with local authorities, and the process is slow and not transparent.",
+    "yourMission": "Develop a cloud-based platform that makes it easy for citizens to report problems and track their resolution in real-time.",
+    "yourSolution": [
+      "Allow citizens to file complaints via a user-friendly app and web portal.",
+      "Store complaints securely in the cloud with real-time tracking for full transparency.",
+      "Provide dashboards for authorities to monitor and prioritize issues.",
+      "Use AI for complaint categorization and prioritization to speed up the process."
+    ],
+    "bonus": [
+      "Enable multilingual voice-based filing to reach a wider audience.",
+      "Integrate with social media for automated complaint reporting."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 16 (Peace, Justice & Strong Institutions): This project builds citizen trust by ensuring transparency, accountability, and efficient governance.",
+      "SDG 11 (Sustainable Cities & Communities): This project improves service delivery and community well-being by resolving issues effectively."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC19",
+    "title": "Cloud-Based Smart Retail Platform",
+    "challenge": "Retailers have trouble managing both their online and physical stores at the same time. This leads to wasted inventory and missed sales.",
+    "yourMission": "Create a cloud-native platform that integrates all retail operations and uses AI to personalize shopping and manage inventory.",
+    "yourSolution": [
+      "Aggregate data from both POS systems and online stores into a single view.",
+      "Provide AI-driven recommendations that personalize the shopping experience for each customer.",
+      "Offer inventory management dashboards that provide a complete picture of stock.",
+      "Enable real-time demand forecasting with cloud analytics to prevent overstocking or shortages."
+    ],
+    "bonus": [
+      "Add AR \"try-before-you-buy\" features for a more immersive shopping experience.",
+      "Use computer vision to monitor shelves and manage inventory automatically."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 8 (Decent Work & Economic Growth): This project supports retail innovation by increasing efficiency, customer satisfaction, and profitability.",
+      "SDG 12 (Responsible Consumption & Production): This project reduces resource wastage through smarter inventory and demand-driven sales models."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  },
+  {
+    "id": "HOCC20",
+    "title": "Cloud-Based Public Safety and Emergency Response System",
+    "challenge": "During an emergency, different response teams often don't have a way to communicate and work together, leading to chaos and delays.",
+    "yourMission": "Develop a cloud-enabled system that unifies communication across all emergency services to enable faster, smarter, and more coordinated responses.",
+    "yourSolution": [
+      "Integrate emergency call data into a unified cloud platform.",
+      "Provide real-time dashboards for fire, police, and medical teams to share information.",
+      "Enable citizen reporting for quicker and more accurate incident updates.",
+      "Add AI-based resource allocation during emergencies."
+    ],
+    "bonus": [
+      "Provide predictive modeling to identify high-risk areas before an incident occurs.",
+      "Include a mobile panic button for instant emergency reporting."
+    ],
+    "domain": "Cloud Computing",
+    "sdgs": [
+      "SDG 11 (Sustainable Cities & Communities): This project strengthens urban resilience by improving preparedness and response to emergencies.",
+      "SDG 16 (Peace, Justice & Strong Institutions): This project enhances institutional efficiency and trust by enabling coordinated emergency management."
+    ],
+    "maxTeams": 2,
+    "takenBy": []
+  }
+]
