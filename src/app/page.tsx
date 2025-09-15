@@ -198,7 +198,7 @@ export default function Home() {
       </div>
 
       {/* <UploadTeamsButton/> */}
-      <UploadProblemsButton />
+      {/* <UploadProblemsButton /> */}
 
       <ConfirmModal open={!!confirmId} onCancel={() => setConfirmId(null)} onConfirm={confirmSelection} />
     </main>

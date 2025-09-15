@@ -132,7 +132,7 @@ export default function ProblemList({
       </div>
 
       {/* Problem Cards */}
-      <div className="grid gap-6 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-12 sm:pb-16">
+      <div className="grid gap-6 sm:gap-10 grid-cols-1 pb-12 sm:pb-16">
         {currentProblems.map((p, idx) => (
           <div
             key={p.id}
