@@ -19,6 +19,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HeaderFull from "@/components/HeaderFull";
 import Particles from "@/components/Particles";
+import Timer from "@/components/timer";
 // import UploadTeamsButton from "@/components/UploadTeamsButton";
 // import UploadProblemsButton from "@/components/UploadProblemsButton";
 
@@ -183,7 +184,8 @@ export default function Home() {
       {/* Content with proper z-index */}
       <div className="relative z-10">
         <HeaderFull />
-        <TeamForm loading={loading} onVerify={handleVerify} />
+        <Timer launchDate="2025-09-20T06:00:00" />
+        {/* <TeamForm loading={loading} onVerify={handleVerify} />
 
         {domain && problems.length > 0 && (
           <ProblemList
@@ -194,7 +196,7 @@ export default function Home() {
             // onSelect={(id) => setConfirmId(id)}
             onSelect={handleProblemSelect}
           />
-        )}
+        )} */}
       </div>
 
       {/* <UploadTeamsButton/> */}
