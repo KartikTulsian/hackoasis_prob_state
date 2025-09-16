@@ -20,7 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 import HeaderFull from "@/components/HeaderFull";
 import Particles from "@/components/Particles";
 // import UploadTeamsButton from "@/components/UploadTeamsButton";
-import UploadProblemsButton from "@/components/UploadProblemsButton";
+// import UploadProblemsButton from "@/components/UploadProblemsButton";
 
 export default function Home() {
   const [teamName, setTeamName] = useState("");

@@ -1,24 +1,34 @@
 "use client";
 import React from "react";
 import { db } from "@/lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, DocumentData } from "firebase/firestore";
 import * as XLSX from "xlsx";
 import { toast } from "react-toastify";
+
+// Extend Team type for export with createdAt as string
+export type TeamExport = {
+  "Team Name": string;
+  "Leader Name": string;
+  Phone: string;
+  Email: string;
+  Domain: string;
+  "Created At": string;
+};
 
 export default function ExportTeamsButton() {
   const handleExport = async () => {
     try {
       const querySnap = await getDocs(collection(db, "teams"));
-      const teams: any[] = [];
+      const teams: TeamExport[] = [];
 
       querySnap.forEach((doc) => {
-        const data = doc.data();
+        const data = doc.data() as DocumentData;
         teams.push({
           "Team Name": data.teamName || "",
           "Leader Name": data.leaderName || "",
-          "Phone": data.phone || "",
-          "Email": data.email || "",
-          "Domain": data.domain || "",
+          Phone: data.phone || "",
+          Email: data.email || "",
+          Domain: data.domain || "",
           "Created At": data.createdAt?.toDate
             ? data.createdAt.toDate().toLocaleString()
             : "",
@@ -37,12 +47,21 @@ export default function ExportTeamsButton() {
         return a["Team Name"].localeCompare(b["Team Name"]);
       });
 
-      // Convert to worksheet
-      const worksheet = XLSX.utils.json_to_sheet(teams, { header: [
-        "Team Name", "Leader Name", "Phone", "Email", "Domain", "Created At"
-      ]});
+      // Convert to worksheet with custom headers
+      const worksheet = XLSX.utils.json_to_sheet(teams, {
+        header: ["Team Name", "Leader Name", "Phone", "Email", "Domain", "Created At"],
+      });
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Teams");
+
+      // Auto column widths (nice-to-have)
+      const colWidths = Object.keys(teams[0]).map((key) => ({
+        wch: Math.max(
+          key.length,
+          ...teams.map((team) => String(team[key as keyof TeamExport]).length)
+        ),
+      }));
+      worksheet["!cols"] = colWidths;
 
       // Export as Excel file
       XLSX.writeFile(workbook, "Teams_Data.xlsx");

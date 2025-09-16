@@ -1,24 +1,35 @@
 "use client";
 import React from "react";
 import { db } from "@/lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, DocumentData } from "firebase/firestore";
 import * as XLSX from "xlsx";
 import { toast } from "react-toastify";
+
+// Strong type for exported rows
+export type SubmissionExport = {
+  "Team Name": string;
+  "Leader Name": string;
+  Phone: string;
+  Email: string;
+  Domain: string;
+  "Problem ID": string;
+  "Submitted At": string;
+};
 
 export default function ExportSubmissionsButton() {
   const handleExport = async () => {
     try {
       const querySnap = await getDocs(collection(db, "submissions"));
-      const submissions: any[] = [];
+      const submissions: SubmissionExport[] = [];
 
       querySnap.forEach((doc) => {
-        const data = doc.data();
+        const data = doc.data() as DocumentData;
         submissions.push({
           "Team Name": data.teamName || "",
           "Leader Name": data.leaderName || "",
-          "Phone": data.phone || "",
-          "Email": data.email || "",
-          "Domain": data.domain || "",
+          Phone: data.phone || "",
+          Email: data.email || "",
+          Domain: data.domain || "",
           "Problem ID": data.problemId || "",
           "Submitted At": data.timestamp?.toDate
             ? data.timestamp.toDate().toLocaleString()
@@ -50,6 +61,17 @@ export default function ExportSubmissionsButton() {
           "Submitted At",
         ],
       });
+
+      // Auto-adjust column widths
+      const colWidths = Object.keys(submissions[0]).map((key) => ({
+        wch: Math.max(
+          key.length,
+          ...submissions.map((row) =>
+            String(row[key as keyof SubmissionExport]).length
+          )
+        ),
+      }));
+      worksheet["!cols"] = colWidths;
 
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Submissions");
