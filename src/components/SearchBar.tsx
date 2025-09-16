@@ -1,12 +1,22 @@
 "use client";
 import React, { useState } from "react";
 import { db } from "@/lib/firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, Timestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
+
+interface Submission {
+  teamName: string;
+  leaderName: string;
+  email: string;
+  phone: string;
+  domain: string;
+  problemId: string;
+  timestamp?: Timestamp; // Firestore timestamp
+}
 
 export default function SearchBar() {
   const [phone, setPhone] = useState("");
-  const [result, setResult] = useState<any | null>(null);
+  const [result, setResult] = useState<Submission | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
@@ -28,8 +38,7 @@ export default function SearchBar() {
         return;
       }
 
-      // Get first matching doc (assuming phone is unique per team leader)
-      const doc = snap.docs[0].data();
+      const doc = snap.docs[0].data() as Submission;
       setResult(doc);
       toast.success("Submission found!");
     } catch (err) {

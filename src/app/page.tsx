@@ -33,6 +33,9 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [confirmId, setConfirmId] = useState<string | null>(null);
+  // Add a flag for controlling activation
+  const isActive = false
+
 
   // Smooth scroll to problem section
   useEffect(() => {
@@ -184,19 +187,23 @@ export default function Home() {
       {/* Content with proper z-index */}
       <div className="relative z-10">
         <HeaderFull />
-        <Timer launchDate="2025-09-20T06:00:00" />
-        {/* <TeamForm loading={loading} onVerify={handleVerify} />
+        <Timer launchDate="2025-09-20T0:00:00" />
+        {isActive && (
+          <>
+            <TeamForm loading={loading} onVerify={handleVerify} />
 
-        {domain && problems.length > 0 && (
-          <ProblemList
-            domain={domain}
-            problems={problems}
-            selectedId={selectedId}
-            loading={loading}
-            // onSelect={(id) => setConfirmId(id)}
-            onSelect={handleProblemSelect}
-          />
-        )} */}
+            {domain && problems.length > 0 && (
+              <ProblemList
+                domain={domain}
+                problems={problems}
+                selectedId={selectedId}
+                loading={loading}
+                onSelect={handleProblemSelect}
+              />
+            )}
+          </>
+        )}
+
       </div>
 
       {/* <UploadTeamsButton/> */}
