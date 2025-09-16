@@ -14,7 +14,18 @@ const getTimeLeft = (expiry: string): TimeCount => {
         minutes = "00",
         seconds = "00";
 
-    const difference = new Date(expiry).getTime() - new Date().getTime();
+    // More robust date parsing
+    const expiryDate = new Date(expiry);
+    const now = new Date();
+    
+    // Check if date is valid
+    if (isNaN(expiryDate.getTime())) {
+        console.error('Invalid date format:', expiry);
+        return { days, hours, minutes, seconds };
+    }
+
+    const difference = expiryDate.getTime() - now.getTime();
+    
     if (difference <= 0) return { days, hours, minutes, seconds };
 
     const dys = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -56,35 +67,40 @@ export default function Timer({ launchDate }: { launchDate: string }) {
     }, [launchDate]);
 
     const timerUnit = (value: string, label: string) => (
-        <div
-            className="relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 
-      rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900
-      shadow-[inset_0_0_25px_rgba(255,255,255,0.2),0_0_40px_rgba(168,85,247,0.4)]
-      border border-gray-400/40 hover:scale-110 transition-transform duration-500 group overflow-hidden"
-        >
-            {/* Shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/15 via-transparent to-white/10 opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
-
-            {/* Outer Glow */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-violet-500 via-blue-500 to-indigo-600 blur-xl opacity-20 group-hover:opacity-50 animate-pulse"></div>
-
-            {/* Value */}
-            <span
-                className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold 
-        text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100
-        drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] tracking-wider"
+        <div className="flex flex-col items-center">
+            <div
+                className="relative flex flex-col items-center justify-center 
+                w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36
+                rounded-xl sm:rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900
+                shadow-[inset_0_0_25px_rgba(255,255,255,0.2),0_0_40px_rgba(168,85,247,0.4)]
+                border border-gray-400/40 hover:scale-105 md:hover:scale-110 
+                transition-transform duration-500 group overflow-hidden"
             >
-                {value}
-            </span>
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/15 via-transparent to-white/10 opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
 
-            {/* Label */}
-            <small
-                className="relative text-sm md:text-base font-semibold 
-        text-gray-300 uppercase tracking-widest mt-1
-        drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
-            >
-                {label}
-            </small>
+                {/* Outer Glow */}
+                <div className="absolute -inset-1 rounded-xl sm:rounded-2xl bg-gradient-to-r from-violet-500 via-blue-500 to-indigo-600 blur-xl opacity-20 group-hover:opacity-50 animate-pulse"></div>
+
+                {/* Value */}
+                <span
+                    className="relative font-extrabold text-transparent bg-clip-text 
+                    bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100
+                    drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] tracking-wider
+                    text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+                >
+                    {value}
+                </span>
+
+                {/* Label */}
+                <small
+                    className="relative font-semibold text-gray-300 uppercase tracking-widest mt-0.5 sm:mt-1
+                    drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]
+                    text-xs xs:text-xs sm:text-sm md:text-base"
+                >
+                    {label}
+                </small>
+            </div>
         </div>
     );
 
@@ -101,33 +117,64 @@ export default function Timer({ launchDate }: { launchDate: string }) {
         window.open(gcalUrl, "_blank");
     };
 
-
-    if (!mounted || !timeLeft) return null;
+    if (!mounted || !timeLeft) {
+        // Loading skeleton
+        return (
+            <div className="flex flex-col items-center gap-8 sm:gap-14 w-full mb-10 px-4">
+                <div className="text-center space-y-4 max-w-3xl">
+                    <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold 
+                        bg-clip-text text-transparent 
+                        bg-gradient-to-r from-gray-100 via-violet-400 to-blue-200
+                        drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]
+                        tracking-wide leading-snug">
+                        🚀 Problem Statements <br />Will Be <br />Relesed Soon!
+                    </h1>
+                    <h2 className="text-base xs:text-lg sm:text-xl md:text-2xl font-medium 
+                        text-gray-300 drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]">
+                        We will be <span className="font-bold text-gray-100">LIVE on 20th September 2025</span>
+                    </h2>
+                </div>
+                
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-6xl 
+                    bg-gradient-to-br from-slate-900 via-gray-800 to-slate-950 
+                    p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl 
+                    shadow-[0_0_40px_rgba(168,85,247,0.5),inset_0_0_20px_rgba(255,255,255,0.2)]
+                    border border-gray-500/30 backdrop-blur-xl">
+                    {[...Array(4)].map((_, i) => (
+                        <div key={i} className="animate-pulse">
+                            <div className="w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 
+                                bg-gray-700 rounded-xl sm:rounded-2xl"></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
 
     return (
-        <div className="flex flex-col items-center gap-14 w-full mb-10 px-4">
-
+        <div className="flex flex-col items-center gap-8 sm:gap-14 w-full mb-10 px-4">
             {/* Announcement */}
             <div className="text-center space-y-4 max-w-3xl">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold 
-          bg-clip-text text-transparent 
-          bg-gradient-to-r from-gray-100 via-violet-400 to-blue-200
-          drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]
-          tracking-wide leading-snug">
-                    🚀 Problem Statements <br />Will Be <br />Unlock Soon!
+                <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold 
+                    bg-clip-text text-transparent 
+                    bg-gradient-to-r from-gray-100 via-violet-400 to-blue-200
+                    drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]
+                    tracking-wide leading-snug">
+                    🚀 Problem Statements <br />Will Be <br />Released Soon!
                 </h1>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-medium 
-          text-gray-300 drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]">
+                <h2 className="text-base xs:text-lg sm:text-xl md:text-2xl font-medium 
+                    text-gray-300 drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]">
                     We will be <span className="font-bold text-gray-100">LIVE on 20th September 2025</span>
                 </h2>
             </div>
 
             {/* Timer Grid */}
             <div
-                className="flex flex-wrap justify-center gap-8 sm:gap-10 w-full max-w-6xl 
-        bg-gradient-to-br from-slate-900 via-gray-800 to-slate-950 
-        p-8 sm:p-10 rounded-3xl shadow-[0_0_40px_rgba(168,85,247,0.5),inset_0_0_20px_rgba(255,255,255,0.2)]
-        border border-gray-500/30 backdrop-blur-xl"
+                className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-6xl 
+                bg-gradient-to-br from-slate-900 via-gray-800 to-slate-950 
+                p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl 
+                shadow-[0_0_30px_rgba(168,85,247,0.5),inset_0_0_20px_rgba(255,255,255,0.2)]
+                border border-gray-500/30 backdrop-blur-xl"
             >
                 {timerUnit(timeLeft.days, "Days")}
                 {timerUnit(timeLeft.hours, "Hours")}
@@ -138,11 +185,12 @@ export default function Timer({ launchDate }: { launchDate: string }) {
             {/* Add to Calendar Button */}
             <button
                 onClick={handleGoogleCalendarClick}
-                className="mt-6 rounded-xl px-8 py-4 text-lg 
-        bg-gradient-to-r from-violet-500 via-blue-600 to-indigo-600 
-        text-white font-semibold shadow-[0_0_20px_rgba(168,85,247,0.7)] 
-        hover:shadow-[0_0_35px_rgba(168,85,247,0.9)] hover:scale-105 
-        transition-all duration-500 backdrop-blur-md border border-white/10"
+                className="mt-2 sm:mt-6 rounded-xl px-6 sm:px-8 py-3 sm:py-4 
+                text-base sm:text-lg bg-gradient-to-r from-violet-500 via-blue-600 to-indigo-600 
+                text-white font-semibold shadow-[0_0_20px_rgba(168,85,247,0.7)] 
+                hover:shadow-[0_0_35px_rgba(168,85,247,0.9)] hover:scale-105 
+                transition-all duration-500 backdrop-blur-md border border-white/10
+                w-full max-w-xs sm:max-w-sm"
             >
                 📅 Add to My Google Calendar
             </button>

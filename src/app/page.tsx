@@ -34,7 +34,7 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [confirmId, setConfirmId] = useState<string | null>(null);
   // Add a flag for controlling activation
-  const isActive = false
+  const isActive = false;
 
 
   // Smooth scroll to problem section
@@ -187,7 +187,7 @@ export default function Home() {
       {/* Content with proper z-index */}
       <div className="relative z-10">
         <HeaderFull />
-        <Timer launchDate="2025-09-20T0:00:00" />
+        <Timer launchDate="2025-09-20T00:01:59" />
         {isActive && (
           <>
             <TeamForm loading={loading} onVerify={handleVerify} />

@@ -111,6 +111,51 @@ export default function HeaderFull() {
             ))}
           </div>
 
+          <h3
+            className="text-base sm:text-lg md:text-xl font-semibold 
+          bg-clip-text text-transparent bg-gradient-to-r from-gray-100 via-gray-300 to-gray-200
+          drop-shadow-[0_0_15px_rgba(200,200,200,0.7)]
+          uppercase tracking-wider pt-10 pb-6"
+          >
+            Technical Sponsores
+          </h3>
+
+          {/* Technical */}
+          
+          <div className="flex items-center gap-6 sm:gap-10 justify-center sm:justify-center px-4">
+            {techsponsors.map((sponsor, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 group cursor-pointer w-32 h-24 sm:w-40 sm:h-28 md:w-48 md:h-36"
+              >
+                <div
+                  className="relative w-full h-full 
+                  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900
+                  rounded-xl sm:rounded-2xl border border-gray-400/40 
+                  shadow-[inset_0_0_12px_rgba(255,255,255,0.1),0_0_20px_rgba(192,132,252,0.4)]
+                  hover:shadow-[inset_0_0_15px_rgba(255,255,255,0.2),0_0_30px_rgba(192,132,252,0.7)]
+                  hover:scale-110 transition-all duration-500 backdrop-blur-sm
+                  flex items-center justify-center overflow-hidden"
+                >
+                  <Image
+                    src={sponsor.src}
+                    alt={sponsor.alt}
+                    width={sponsor.width}
+                    height={sponsor.height}
+                    className="max-w-[70%] max-h-[70%] sm:max-w-[80%] sm:max-h-[80%] object-contain 
+                    opacity-90 group-hover:opacity-100 transition duration-300
+                    filter group-hover:brightness-110"
+                    unoptimized
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-purple-300/10 to-transparent 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Collaborators */}
           <h3
             className="text-base sm:text-lg md:text-xl font-semibold mt-8 sm:mt-12 pt-2 pb-5 sm:py-4
@@ -140,6 +185,10 @@ export default function HeaderFull() {
 const sponsors = [
   { src: "/SCONTO_LOGO_IIT_KGP.png", alt: "Sconto IIT KGP", width: 250, height: 250 },
   { src: "/glb.jpeg", alt: "GLBXTNT", width: 250, height: 250 }
+];
+
+const techsponsors = [
+  { src: "/ieee.png", alt: "IEEE", width: 250, height: 250 },
 ];
 
 const collaborators = [
