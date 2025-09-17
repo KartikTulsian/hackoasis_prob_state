@@ -72,7 +72,7 @@ export default function TeamCreationForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-gray-900/60 p-6 rounded-xl shadow-md backdrop-blur-md">
+    <div className="max-w-lg mx-auto bg-gray-900/60 p-6 rounded-xl shadow-md backdrop-blur-md my-10">
       <h2 className="text-2xl font-bold text-purple-400 mb-4">Create New Team</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">

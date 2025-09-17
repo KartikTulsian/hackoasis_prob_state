@@ -7,6 +7,8 @@ type Props = {
   onSelect: (id: string) => void;
   onClose: () => void;
   loading?: boolean;
+  hasAlreadySubmitted?: boolean;
+  isSelectedProblem?: boolean;
 };
 
 export default function ProblemModal({
@@ -14,6 +16,8 @@ export default function ProblemModal({
   onSelect,
   onClose,
   loading = false,
+  hasAlreadySubmitted = false,
+  isSelectedProblem = false,
 }: Props) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -50,8 +54,10 @@ export default function ProblemModal({
                    rounded-2xl backdrop-blur-xl overflow-y-auto hide-scrollbar
                    transition-all duration-500 ease-out transform
                    shadow-[0_0_60px_rgba(255,255,255,0.25),inset_0_0_25px_rgba(255,255,255,0.1)]
-                   border border-purple-300/40
-                   bg-gradient-to-br from-gray-900 via-gray-800 to-black
+                   ${hasAlreadySubmitted && isSelectedProblem 
+                     ? "border border-green-400/60 bg-gradient-to-br from-green-900/20 via-gray-800 to-black" 
+                     : "border border-purple-300/40 bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+                   }
                    ${isVisible ? "scale-100 opacity-100 translate-y-0" : "scale-95 opacity-0 translate-y-4"}`}
         style={{
           maxHeight: "90vh",
@@ -87,7 +93,15 @@ export default function ProblemModal({
 
             {/* Status Badge */}
             <div className="flex justify-center mt-4">
-              {filled ? (
+              {hasAlreadySubmitted && isSelectedProblem ? (
+                <span
+                  className="px-4 py-2 text-sm sm:text-lg font-semibold rounded-lg
+                             bg-gradient-to-r from-green-400 via-emerald-500 to-green-400
+                             text-white shadow-[0_0_18px_rgba(34,197,94,0.8)]"
+                >
+                  ✅ Your Selected Problem Statement
+                </span>
+              ) : filled ? (
                 <span
                   className="px-4 py-2 text-sm sm:text-lg font-semibold rounded-lg
                              bg-gradient-to-r from-red-400 via-red-600 to-red-400
@@ -171,21 +185,33 @@ export default function ProblemModal({
                          bg-gradient-to-r from-gray-500 to-gray-700
                          text-white shadow-md hover:scale-105 transition"
             >
-              Cancel
+              {hasAlreadySubmitted ? "Close" : "Cancel"}
             </button>
 
-            <button
-              disabled={loading || filled}
-              onClick={handleSelect}
-              className={`px-8 py-3 rounded-lg font-semibold text-base sm:text-lg transition-all
-                          transform hover:scale-105 shadow-lg ${
-                filled || loading
-                  ? "bg-gray-600 cursor-not-allowed text-gray-300"
-                  : "bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-[0_0_25px_rgba(147,51,234,0.6)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)]"
-              }`}
-            >
-              {loading ? "Selecting..." : filled ? "Locked" : "Select This Problem"}
-            </button>
+            {/* Only show select button if not already submitted */}
+            {!hasAlreadySubmitted && (
+              <button
+                disabled={loading || filled}
+                onClick={handleSelect}
+                className={`px-8 py-3 rounded-lg font-semibold text-base sm:text-lg transition-all
+                            transform hover:scale-105 shadow-lg ${
+                  filled || loading
+                    ? "bg-gray-600 cursor-not-allowed text-gray-300"
+                    : "bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-[0_0_25px_rgba(147,51,234,0.6)] hover:shadow-[0_0_35px_rgba(147,51,234,0.8)]"
+                }`}
+              >
+                {loading ? "Selecting..." : filled ? "Locked" : "Select This Problem"}
+              </button>
+            )}
+
+            {/* Show confirmation message if already submitted */}
+            {hasAlreadySubmitted && isSelectedProblem && (
+              <div className="px-8 py-3 rounded-lg bg-gradient-to-r from-green-800/60 to-emerald-900/60 border border-green-400/30">
+                <p className="text-green-200 text-base sm:text-lg font-medium">
+                  ✅ You have successfully selected this problem statement
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

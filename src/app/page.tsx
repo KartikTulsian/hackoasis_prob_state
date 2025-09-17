@@ -20,8 +20,6 @@ import "react-toastify/dist/ReactToastify.css";
 import HeaderFull from "@/components/HeaderFull";
 import Particles from "@/components/Particles";
 import Timer from "@/components/timer";
-// import UploadTeamsButton from "@/components/UploadTeamsButton";
-// import UploadProblemsButton from "@/components/UploadProblemsButton";
 
 export default function Home() {
   const [teamName, setTeamName] = useState("");
@@ -33,9 +31,11 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [confirmId, setConfirmId] = useState<string | null>(null);
+  const [hasAlreadySubmitted, setHasAlreadySubmitted] = useState(false);
+  const [submittedProblemId, setSubmittedProblemId] = useState<string | null>(null);
+  
   // Add a flag for controlling activation
   const isActive = false;
-
 
   // Smooth scroll to problem section
   useEffect(() => {
@@ -85,16 +85,44 @@ export default function Home() {
         where("email", "==", emailIn.trim())
       );
       const submissionSnap = await getDocs(submissionQ);
+      
       if (!submissionSnap.empty) {
-        toast.error("Your team has already selected a problem statement.");
+        // Team has already submitted, get their selected problem
+        const submissionData = submissionSnap.docs[0].data();
+        const selectedProblemId = submissionData.problemId;
+        
+        setDomain(teamDoc.domain);
+        setHasAlreadySubmitted(true);
+        setSubmittedProblemId(selectedProblemId);
+        setSelectedId(selectedProblemId);
+        
+        // Fetch only the selected problem statement
+        const selectedProblemDoc = await getDocs(
+          query(collection(db, "problem_statements"), where("__name__", "==", selectedProblemId))
+        );
+        
+        if (!selectedProblemDoc.empty) {
+          const selectedProblem: Problem_Statements = {
+            id: selectedProblemDoc.docs[0].id,
+            ...(selectedProblemDoc.docs[0].data() as Omit<Problem_Statements, "id">),
+          };
+          setProblems([selectedProblem]);
+          toast.success("Showing your selected problem statement.");
+        } else {
+          toast.error("Could not retrieve your selected problem statement.");
+        }
+        
         setLoading(false);
-        setDomain(null);
         return;
       }
 
+      // Team hasn't submitted yet, show all problems for their domain
       setDomain(teamDoc.domain);
+      setHasAlreadySubmitted(false);
+      setSubmittedProblemId(null);
+      setSelectedId(null);
 
-      // Fetch problems
+      // Fetch all problems for the domain
       const pq = query(collection(db, "problem_statements"), where("domain", "==", teamDoc.domain));
       const psnap = await getDocs(pq);
       const pList: Problem_Statements[] = psnap.docs.map((d) => ({
@@ -111,12 +139,15 @@ export default function Home() {
   };
 
   const handleProblemSelect = (id: string) => {
-    setConfirmId(id);
+    // Only allow selection if team hasn't already submitted
+    if (!hasAlreadySubmitted) {
+      setConfirmId(id);
+    }
   };
 
   // Confirm selection
   const confirmSelection = async () => {
-    if (!domain || !confirmId) return;
+    if (!domain || !confirmId || hasAlreadySubmitted) return;
     setLoading(true);
 
     try {
@@ -152,6 +183,8 @@ export default function Home() {
         prev.map((p) => (p.id === confirmId ? { ...p, takenBy: [...(p.takenBy || []), teamName] } : p))
       );
       setSelectedId(confirmId);
+      setHasAlreadySubmitted(true);
+      setSubmittedProblemId(confirmId);
       toast.success("Problem Statement locked successfully!");
     } catch (err: unknown) {
       console.error(err);
@@ -187,7 +220,7 @@ export default function Home() {
       {/* Content with proper z-index */}
       <div className="relative z-10">
         <HeaderFull />
-        <Timer launchDate="2025-09-20T00:01:59" />
+        <Timer launchDate="2025-09-20T05:50:59" />
         {isActive && (
           <>
             <TeamForm loading={loading} onVerify={handleVerify} />
@@ -199,17 +232,19 @@ export default function Home() {
                 selectedId={selectedId}
                 loading={loading}
                 onSelect={handleProblemSelect}
+                hasAlreadySubmitted={hasAlreadySubmitted}
+                submittedProblemId={submittedProblemId}
               />
             )}
           </>
         )}
-
       </div>
 
-      {/* <UploadTeamsButton/> */}
-      {/* <UploadProblemsButton /> */}
-
-      <ConfirmModal open={!!confirmId} onCancel={() => setConfirmId(null)} onConfirm={confirmSelection} />
+      <ConfirmModal 
+        open={!!confirmId} 
+        onCancel={() => setConfirmId(null)} 
+        onConfirm={confirmSelection} 
+      />
     </main>
   );
 }
