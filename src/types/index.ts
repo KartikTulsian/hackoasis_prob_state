@@ -1,3 +1,9 @@
+import { Timestamp } from "firebase/firestore";
+
+type FirestoreServerTimestamp = ReturnType<
+  typeof import("firebase/firestore")["serverTimestamp"]
+>;
+
 // types/index.ts
 export type Team = {
   teamName: string;
@@ -20,7 +26,7 @@ export type SpotTeam = {
   member2: string;
   member3: string;
   member4: string;
-  createdAt?: any; // Firebase serverTimestamp
+  createdAt?: Timestamp | FirestoreServerTimestamp; // Firebase serverTimestamp
 };
 
 export type Problem_Statements = {

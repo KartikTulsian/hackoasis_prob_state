@@ -6,7 +6,7 @@ import ExportTeamsButton from "@/components/ExportTeamsButton";
 import ExportSubmissionsButton from "@/components/ExportSubmissionsButton";
 import SearchBar from "@/components/SearchBar";
 import TeamUpdateForm from "@/components/TeamUpdateForm";
-import UploadTeamsButton from "@/components/UploadTeamsButton";
+// import UploadTeamsButton from "@/components/UploadTeamsButton";
 
 export default function TeamsPage() {
   return (
