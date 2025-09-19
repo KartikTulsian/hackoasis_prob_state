@@ -54,6 +54,56 @@ export default function Home() {
     }
   }, [domain, problems]);
 
+  // Function to fetch problem statements
+  const fetchProblemStatements = async (teamDomain: string, isRefresh = false) => {
+    try {
+      if (hasAlreadySubmitted && submittedProblemId && !isRefresh) {
+        // If already submitted and not refreshing, fetch only the selected problem
+        const selectedProblemDoc = await getDocs(
+          query(collection(db, "problem_statements"), where("__name__", "==", submittedProblemId))
+        );
+        
+        if (!selectedProblemDoc.empty) {
+          const selectedProblem: Problem_Statements = {
+            id: selectedProblemDoc.docs[0].id,
+            ...(selectedProblemDoc.docs[0].data() as Omit<Problem_Statements, "id">),
+          };
+          setProblems([selectedProblem]);
+        }
+      } else {
+        // Fetch all problems for the domain
+        const pq = query(collection(db, "problem_statements"), where("domain", "==", teamDomain));
+        const psnap = await getDocs(pq);
+        const pList: Problem_Statements[] = psnap.docs.map((d) => ({
+          id: d.id,
+          ...(d.data() as Omit<Problem_Statements, "id">),
+        }));
+        setProblems(pList);
+        
+        if (isRefresh) {
+          toast.success("Problem statements refreshed successfully!");
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching problem statements:", error);
+      if (isRefresh) {
+        toast.error("Failed to refresh problem statements. Please try again.");
+      }
+    }
+  };
+
+  // Refresh function for problem statements
+  const handleRefreshProblems = async () => {
+    if (!domain) return;
+    
+    try {
+      await fetchProblemStatements(domain, true);
+    } catch (error) {
+      console.error("Error refreshing problems:", error);
+      toast.error("Failed to refresh problem statements.");
+    }
+  };
+
   // Verify team
   const handleVerify = async (teamNameIn: string, leaderNameIn: string, phoneIn: string, emailIn: string) => {
     setLoading(true);
@@ -96,21 +146,9 @@ export default function Home() {
         setSubmittedProblemId(selectedProblemId);
         setSelectedId(selectedProblemId);
         
-        // Fetch only the selected problem statement
-        const selectedProblemDoc = await getDocs(
-          query(collection(db, "problem_statements"), where("__name__", "==", selectedProblemId))
-        );
-        
-        if (!selectedProblemDoc.empty) {
-          const selectedProblem: Problem_Statements = {
-            id: selectedProblemDoc.docs[0].id,
-            ...(selectedProblemDoc.docs[0].data() as Omit<Problem_Statements, "id">),
-          };
-          setProblems([selectedProblem]);
-          toast.success("Showing your selected problem statement.");
-        } else {
-          toast.error("Could not retrieve your selected problem statement.");
-        }
+        // Fetch the selected problem statement
+        await fetchProblemStatements(teamDoc.domain, false);
+        toast.success("Showing your selected problem statement.");
         
         setLoading(false);
         return;
@@ -123,13 +161,7 @@ export default function Home() {
       setSelectedId(null);
 
       // Fetch all problems for the domain
-      const pq = query(collection(db, "problem_statements"), where("domain", "==", teamDoc.domain));
-      const psnap = await getDocs(pq);
-      const pList: Problem_Statements[] = psnap.docs.map((d) => ({
-        id: d.id,
-        ...(d.data() as Omit<Problem_Statements, "id">),
-      }));
-      setProblems(pList);
+      await fetchProblemStatements(teamDoc.domain, false);
     } catch (err) {
       console.error(err);
       toast.error("Something went wrong while verifying.");
@@ -234,6 +266,7 @@ export default function Home() {
                 onSelect={handleProblemSelect}
                 hasAlreadySubmitted={hasAlreadySubmitted}
                 submittedProblemId={submittedProblemId}
+                onRefresh={handleRefreshProblems}
               />
             )}
           </>

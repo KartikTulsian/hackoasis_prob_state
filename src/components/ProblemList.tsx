@@ -12,6 +12,7 @@ type Props = {
   onSelect: (id: string) => void;
   hasAlreadySubmitted?: boolean;
   submittedProblemId?: string | null;
+  onRefresh?: () => Promise<void>; // New prop for refresh function
 };
 
 const ITEMS_PER_PAGE = 7;
@@ -24,10 +25,12 @@ export default function ProblemList({
   onSelect,
   hasAlreadySubmitted = false,
   submittedProblemId = null,
+  onRefresh,
 }: Props) {
   const [page, setPage] = useState(1);
   const [modalProblem, setModalProblem] =
     useState<Problem_Statements | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
 
   const startIndex = (page - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -49,6 +52,19 @@ export default function ProblemList({
     setModalProblem(null);
   };
 
+  const handleRefresh = async () => {
+    if (!onRefresh || refreshing) return;
+    
+    setRefreshing(true);
+    try {
+      await onRefresh();
+    } catch (error) {
+      console.error("Error refreshing problem statements:", error);
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
   return (
     <section
       id="problem-statements-section"
@@ -59,11 +75,41 @@ export default function ProblemList({
         <div className="absolute inset-0 bg-black/20 backdrop-blur-md rounded-3xl border border-gray-300/30 shadow-[0_0_35px_rgba(255,255,255,0.15)]"></div>
 
         <div className="relative z-10 py-6 sm:py-10 px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text 
-                         bg-gradient-to-r from-gray-100 via-purple-300 to-blue-500 
-                         drop-shadow-[0_0_25px_rgba(200,200,255,0.7)]">
-            {hasAlreadySubmitted ? "Your Selected Problem Statement" : "Problem Statements"}
-          </h2>
+          {/* Title and Refresh Button Container */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text 
+                           bg-gradient-to-r from-gray-100 via-purple-300 to-blue-500 
+                           drop-shadow-[0_0_25px_rgba(200,200,255,0.7)]">
+              {hasAlreadySubmitted ? "Your Selected Problem Statement" : "Problem Statements"}
+            </h2>
+            
+            {/* Refresh Button */}
+            {onRefresh && (
+              <button
+                onClick={handleRefresh}
+                disabled={refreshing || loading}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 
+                          text-white font-semibold text-sm sm:text-base hover:from-purple-700 hover:to-blue-700 
+                          transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.5)] 
+                          disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                <svg 
+                  className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-500 ${refreshing ? 'animate-spin' : 'group-hover:rotate-180'}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+                  />
+                </svg>
+                {refreshing ? "Refreshing..." : "Refresh"}
+              </button>
+            )}
+          </div>
 
           {/* Show submission status if already submitted */}
           {hasAlreadySubmitted && (
@@ -155,7 +201,7 @@ export default function ProblemList({
           >
             <ProblemCard
               problem_statements={p}
-              disabled={loading}
+              disabled={loading || refreshing}
               selected={selectedId === p.id}
               onClick={() => handleCardClick(p)}
               hasAlreadySubmitted={hasAlreadySubmitted}
@@ -210,7 +256,7 @@ export default function ProblemList({
           problem={modalProblem}
           onSelect={handleModalSelect}
           onClose={closeModal}
-          loading={loading}
+          loading={loading || refreshing}
           hasAlreadySubmitted={hasAlreadySubmitted}
           isSelectedProblem={hasAlreadySubmitted && modalProblem.id === submittedProblemId}
         />
