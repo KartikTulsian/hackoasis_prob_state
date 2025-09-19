@@ -159,6 +159,7 @@ export default function ProblemList({
               selected={selectedId === p.id}
               onClick={() => handleCardClick(p)}
               hasAlreadySubmitted={hasAlreadySubmitted}
+              isSelectedProblem={submittedProblemId === p.id}
             />
           </div>
         ))}

@@ -8,6 +8,7 @@ type Props = {
   onClick: () => void;
   selected?: boolean;
   hasAlreadySubmitted?: boolean;
+  isSelectedProblem?: boolean;
 };
 
 export default function ProblemCard({
@@ -16,6 +17,7 @@ export default function ProblemCard({
   onClick,
   selected,
   hasAlreadySubmitted = false,
+  isSelectedProblem = false
 }: Props) {
   const filled =
     (problem_statements.takenBy?.length || 0) >=
@@ -28,16 +30,16 @@ export default function ProblemCard({
               hover:-translate-y-1 hover:scale-[1.02]
               shadow-[0_0_25px_rgba(192,192,192,0.3),inset_0_0_20px_rgba(255,255,255,0.1)]
               ${selected
-          ? hasAlreadySubmitted 
+          ? hasAlreadySubmitted
             ? "border-2 border-green-400 shadow-[0_0_30px_rgba(34,197,94,0.5)]"
             : "border-2 border-purple-400 animate-pulse"
           : "border border-gray-400/40"
         }
               cursor-pointer
-              ${hasAlreadySubmitted 
-                ? "bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-950" 
-                : "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950"
-              }
+              ${hasAlreadySubmitted
+          ? "bg-gradient-to-br from-green-900/40 via-gray-800 to-gray-950"
+          : "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950"
+        }
               ${disabled ? "opacity-50" : ""}
               `}
       onClick={onClick}
@@ -78,31 +80,33 @@ export default function ProblemCard({
           )}
 
           <div className="text-[10px] sm:text-xs text-purple-400 italic">
-            {hasAlreadySubmitted ? (
-              <span className="text-green-400">✓ This is your selected problem statement</span>
+            {isSelectedProblem ? (
+              <span className="text-green-400">
+                ✓ This is your selected problem statement
+              </span>
             ) : filled ? (
               <span>Reached maximum selection</span>
             ) : (
               <span>Click to view full details</span>
             )}
           </div>
+
         </div>
 
         {/* Status */}
         <div className="flex flex-col items-end flex-shrink-0">
-          {hasAlreadySubmitted ? (
+          {isSelectedProblem ? (
             <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-lg
-                           bg-gradient-to-r from-green-400 via-emerald-500 to-green-400 text-white 
-                           shadow-[0_0_12px_rgba(34,197,94,0.7)]">
+                 bg-gradient-to-r from-green-400 via-emerald-500 to-green-400 text-white 
+                 shadow-[0_0_12px_rgba(34,197,94,0.7)]">
               Selected ✓
             </span>
           ) : (
             <span
-              className={`px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-lg shadow-md ${
-                filled
-                  ? "bg-gradient-to-r from-red-400 via-red-600 to-red-400 text-red-100 shadow-[0_0_12px_rgba(239,68,68,0.7)]"
-                  : "bg-gradient-to-r from-emerald-300 via-green-500 to-emerald-300 text-white shadow-[0_0_7px_rgba(34,197,94,0.7)]"
-              }`}
+              className={`px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-lg shadow-md ${filled
+                ? "bg-gradient-to-r from-red-400 via-red-600 to-red-400 text-red-100 shadow-[0_0_12px_rgba(239,68,68,0.7)]"
+                : "bg-gradient-to-r from-emerald-300 via-green-500 to-emerald-300 text-white shadow-[0_0_7px_rgba(34,197,94,0.7)]"
+                }`}
             >
               {filled
                 ? "Locked"
