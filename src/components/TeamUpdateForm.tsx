@@ -83,13 +83,31 @@ export default function TeamUpdateForm() {
 
     try {
       setLoading(true);
-      const ref = doc(db, "teams", team.id);
+      const teamRef = doc(db, "teams", team.id);
 
-      await updateDoc(ref, {
+      // Update teams collection
+      await updateDoc(teamRef, {
         teamName: team.teamName,
         leaderName: team.leaderName,
         domain: team.domain,
       });
+
+      // 🔍 Check if this team exists in spotTeams (match by phone)
+      const spotQ = query(
+        collection(db, "spotTeams"),
+        where("phone", "==", team.phone)
+      );
+      const spotSnap = await getDocs(spotQ);
+
+      if (!spotSnap.empty) {
+        // Update the first matching spotTeam
+        const spotRef = doc(db, "spotTeams", spotSnap.docs[0].id);
+        await updateDoc(spotRef, {
+          teamName: team.teamName,
+          leaderName: team.leaderName,
+          domain: team.domain,
+        });
+      }
 
       toast.success("Team updated successfully!");
 
@@ -103,6 +121,7 @@ export default function TeamUpdateForm() {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="max-w-lg mx-auto bg-gray-900/60 p-6 rounded-xl shadow-md backdrop-blur-md my-10">
