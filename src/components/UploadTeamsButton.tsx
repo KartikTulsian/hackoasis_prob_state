@@ -13,7 +13,7 @@ export default function UploadTeamsButton() {
       toast.info("Starting team upload...");
 
       // Load the JSON file from public folder
-      const response = await fetch("/teams_book.json");
+      const response = await fetch("/teams_book_updated.json");
       if (!response.ok) {
         throw new Error("Failed to fetch JSON file. Make sure teams_book.json exists in public folder.");
       }
@@ -39,6 +39,7 @@ export default function UploadTeamsButton() {
             phone: team.phone?.trim() || "",
             email: team.email?.trim() || "",
             domain: team.domain?.trim() || "",
+            noOfParticipants: team.noOfParticipants?.trim() || "",
             // Add timestamp for tracking
             createdAt: new Date()
           });

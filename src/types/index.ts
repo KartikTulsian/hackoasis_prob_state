@@ -5,6 +5,22 @@ export type Team = {
   phone: string;
   email: string;
   domain: string;
+  noOfParticipants: string;
+};
+
+export type SpotTeam = {
+  teamName: string;
+  leaderName: string;
+  phone: string;
+  email: string;
+  domain: string;
+  noOfParticipants: string;
+  institute: string;
+  member1: string;
+  member2: string;
+  member3: string;
+  member4: string;
+  createdAt?: any; // Firebase serverTimestamp
 };
 
 export type Problem_Statements = {
