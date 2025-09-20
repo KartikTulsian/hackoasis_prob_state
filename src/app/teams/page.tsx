@@ -6,6 +6,8 @@ import ExportTeamsButton from "@/components/ExportTeamsButton";
 import ExportSubmissionsButton from "@/components/ExportSubmissionsButton";
 import SearchBar from "@/components/SearchBar";
 import TeamUpdateForm from "@/components/TeamUpdateForm";
+import UploadTeamsButton from "@/components/UploadTeamsButton";
+import UploadProblemsButton from "@/components/UploadProblemsButton";
 // import UploadTeamsButton from "@/components/UploadTeamsButton";
 
 export default function TeamsPage() {
@@ -19,7 +21,8 @@ export default function TeamsPage() {
       <ExportTeamsButton/>
       <ExportSubmissionsButton/>
 
-      {/* <UploadTeamsButton/> */}
+      <UploadTeamsButton/>
+      <UploadProblemsButton/>
     </main>
   );
 }
