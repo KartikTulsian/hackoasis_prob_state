@@ -35,7 +35,7 @@ export default function Home() {
   const [submittedProblemId, setSubmittedProblemId] = useState<string | null>(null);
   
   // Add a flag for controlling activation
-  const isActive = false;
+  const isActive = true;
 
   // Smooth scroll to problem section
   useEffect(() => {
@@ -238,7 +238,7 @@ export default function Home() {
       <div className="fixed inset-0 z-0 h-full w-full pointer-events-none">
         <Particles
           particleColors={["#a78bfa", "#7c3aed", "#c084fc"]}
-          particleCount={1300}
+          particleCount={1100}
           particleSpread={10}
           speed={0.10}
           particleBaseSize={140}
@@ -252,7 +252,7 @@ export default function Home() {
       {/* Content with proper z-index */}
       <div className="relative z-10">
         <HeaderFull />
-        <Timer launchDate="2025-09-20T05:50:59" />
+        {/* <Timer launchDate="2025-09-20T05:50:59" /> */}
         {isActive && (
           <>
             <TeamForm loading={loading} onVerify={handleVerify} />
