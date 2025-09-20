@@ -21,7 +21,7 @@ export default function TeamsPage() {
       <ExportTeamsButton/>
       <ExportSubmissionsButton/>
 
-      <UploadTeamsButton/>
+      {/* <UploadTeamsButton/> */}
       <UploadProblemsButton/>
     </main>
   );

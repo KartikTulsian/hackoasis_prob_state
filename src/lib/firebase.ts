@@ -9,13 +9,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAXoMH0oLP47mIG9TL8vieMBj8YKkMAPDg",
-  authDomain: "hackoasis-prob-statement-61367.firebaseapp.com",
-  projectId: "hackoasis-prob-statement-61367",
-  storageBucket: "hackoasis-prob-statement-61367.firebasestorage.app",
-  messagingSenderId: "295731396343",
-  appId: "1:295731396343:web:561043622c1c37bf475df2",
-  measurementId: "G-9VN80W5D71"
+  apiKey: "AIzaSyAyfu87RAbV79A5se43_i5YZN-UZMC0drE",
+  authDomain: "hackoasis-prob-statements.firebaseapp.com",
+  projectId: "hackoasis-prob-statements",
+  storageBucket: "hackoasis-prob-statements.firebasestorage.app",
+  messagingSenderId: "389222705368",
+  appId: "1:389222705368:web:f87c4a1651700588e58fad",
+  measurementId: "G-BGR7X9HTJY"
 };
 
 if (!getApps().length) {
